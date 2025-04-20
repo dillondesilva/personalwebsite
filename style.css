@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+    themes: pastel --default;
+}
+
+body {
+    cursor: url('https://www.hexle.ai/favicon.ico'), 0 0, auto !important; /* Replace with the actual path to your rocket image */
+}
