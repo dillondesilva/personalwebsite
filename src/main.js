@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
-  <div>
+  <div class="">
     <h1>Dillon de Silva</h1> 
   </div>
 `
