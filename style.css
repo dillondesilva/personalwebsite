@@ -1,9 +1,144 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
-@plugin "daisyui" {
-    themes: pastel --default;
+@font-face {
+  font-family: "system-serif";
+  src: local("Georgia"), local("Times New Roman");
+}
+
+:root {
+  --bg: #f8f6f2;
+  --ink: #14130f;
+  --muted: #6b6a63;
+  --rule: #dcd9d0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    cursor: url('https://www.hexle.ai/favicon.ico'), 0 0, auto !important; /* Replace with the actual path to your rocket image */
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 0 5rem;
+}
+
+.wordmark {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.hero {
+  flex: 1;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+}
+
+h1 {
+  font-family: "system-serif", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 2.5rem;
+}
+
+.lede {
+  max-width: 60ch;
+}
+
+.lede p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2a2a24;
+  margin: 0 0 1.4rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+}
+
+.cta:hover {
+  color: var(--muted);
+  border-color: var(--muted);
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  margin-top: 4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-footer a:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+@media (max-width: 480px) {
+  .site-header,
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
 }
